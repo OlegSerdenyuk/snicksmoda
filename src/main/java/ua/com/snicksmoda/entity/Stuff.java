@@ -123,4 +123,8 @@ public class Stuff {
                 ", basket=" + basket +
                 '}';
     }
+
+    public void add(Stuff stuff) {
+
+    }
 }

@@ -17,7 +17,13 @@ public class ClientService {
     ClientRepository clientRepository;
 
     @Autowired
+    private BasketService basketService;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private MailService mailService;
 
     @Transactional
     public boolean addClient(String name, String surname, String email, String phone, Role role) {
@@ -31,6 +37,8 @@ public class ClientService {
         if (clientRepository.existsById(client.getIdClient())) {
             return false;
         }
+        Long basket = basketService.addBasket();
+        client.setBasket(basketService.getBasketById(basket));
         clientRepository.save(client);
         return true;
     }

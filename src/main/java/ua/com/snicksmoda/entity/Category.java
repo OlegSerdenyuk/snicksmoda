@@ -9,6 +9,6 @@ public enum Category {
 
     @Override
     public String toString() {
-        return "ROLE_" + name();
+        return name();
     }
 }

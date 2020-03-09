@@ -1,6 +1,7 @@
 package ua.com.snicksmoda.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,8 +11,14 @@ public class Basket {
     @GeneratedValue
     private Long idBasket;
 
+    @OneToOne(mappedBy = "basket")
+    private Client client;
+
+    @ManyToOne
+    private Stuff stuff;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "basket")
-    List<Stuff> stuffList;
+    List<Stuff> stuffList = new ArrayList<>();
 
     public Basket() {
     }
@@ -34,6 +41,18 @@ public class Basket {
 
     public void setStuffList(List<Stuff> stuffList) {
         this.stuffList = stuffList;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public void setStuff(Stuff stuff) {
+        this.stuff.add(stuff);
     }
 
     @Override

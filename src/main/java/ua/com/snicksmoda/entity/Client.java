@@ -21,8 +21,12 @@ public class Client {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     List<Orders> ordersList;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idBasket")
+    private Basket basket;
 
     public Client() {
     }
@@ -32,10 +36,10 @@ public class Client {
         this.surName = surName;
         this.email = email;
         this.password = password;
-        this.phone = phone;
+        this.role = role;
     }
 
-    public Client(String name, String surname, String email, String password, String phone, Role role) {
+    public Client(String name, String surName, String email, String password, String phone, Role role) {
         this.name = name;
         this.surName = surName;
         this.email = email;
@@ -111,6 +115,14 @@ public class Client {
 
     public void setOrdersList(List<Orders> ordersList) {
         this.ordersList = ordersList;
+    }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 
     @Override

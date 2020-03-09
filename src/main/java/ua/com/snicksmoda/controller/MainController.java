@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ua.com.snicksmoda.entity.Client;
 import ua.com.snicksmoda.entity.Role;
+import ua.com.snicksmoda.service.BasketService;
 import ua.com.snicksmoda.service.ClientService;
+import ua.com.snicksmoda.service.StuffService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,12 +21,13 @@ public class MainController {
     private ClientService clientService;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    BasketService basketService;
 
-    @RequestMapping("/")
-    String index() {
-        return "index";
-    }
+    @Autowired
+    StuffService stuffService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @RequestMapping("/main_page")
     String mainPage() {
