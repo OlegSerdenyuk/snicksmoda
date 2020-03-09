@@ -22,7 +22,7 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackageClasses = SnicksmodaApplication.class)
 public class JpaConfiguration implements TransactionManagementConfigurer {
 
-    @Value("${dataSource.driverClassName}")
+    @Value("${dataSource.driver-class-name}")
     private String driver;
 
     @Value("${dataSource.url}")
@@ -34,11 +34,11 @@ public class JpaConfiguration implements TransactionManagementConfigurer {
     @Value("${dataSource.password}")
     private String password;
 
-    @Value("${hibernate.dialect}")
-    private String dialect;
+    @Value("${jpa.database-platform}")
+    private String databasePlatform;
 
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hbm2ddlAuto;
+    @Value("${hibernate.ddl-auto}")
+    private String ddlAuto;
 
 
     @Bean
@@ -59,8 +59,8 @@ public class JpaConfiguration implements TransactionManagementConfigurer {
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
-        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
-        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
+        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, databasePlatform);
+        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, ddlAuto);
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
         return entityManagerFactoryBean;
     }
