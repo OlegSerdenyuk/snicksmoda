@@ -22,24 +22,23 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackageClasses = SnicksmodaApplication.class)
 public class JpaConfiguration implements TransactionManagementConfigurer {
 
-    @Value("${dataSource.driver-class-name}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driver;
 
-    @Value("${dataSource.url}")
+    @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${dataSource.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${dataSource.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${jpa.database-platform}")
+    @Value("${spring.jpa.database-platform}")
     private String databasePlatform;
 
-    @Value("${hibernate.ddl-auto}")
+    @Value("${spring.jpa.hibernate.ddl-auto}")
     private String ddlAuto;
-
 
     @Bean
     public DataSource configureDataSource() {

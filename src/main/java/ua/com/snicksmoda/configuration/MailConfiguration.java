@@ -26,7 +26,7 @@ public class MailConfiguration {
     @Value("${spring.mail.protocol}")
     private String protocol;
 
-    @Value("${spring.mail.debug}")
+    @Value("${mail.debug}")
     private String debug;
 
     @Bean

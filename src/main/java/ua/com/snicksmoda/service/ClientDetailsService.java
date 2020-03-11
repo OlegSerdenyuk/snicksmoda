@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ua.com.snicksmoda.entity.Client;
+import ua.com.snicksmoda.entity.Role;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 @Service
 public class ClientDetailsService implements UserDetailsService {
 
-    @Autowired
+    @Autowired(required=true)
     private ClientService clientService;
 
     @Override

@@ -25,12 +25,12 @@ public class ClientService {
     @Autowired
     private MailService mailService;
 
-    @Transactional
-    public boolean addClient(String name, String surname, String email, String phone, Role role) {
-        Client client = new Client(name, surname, email, phone, role);
-        clientRepository.save(client);
-        return true;
-    }
+//    @Transactional
+//    public boolean addClient(String name, String surname, String email, String phone, Role role) {
+//        Client client = new Client(name, surname, email, phone, role);
+//        clientRepository.save(client);
+//        return true;
+//    }
 
     @Transactional
     public boolean saveClient(Client client) {
@@ -61,9 +61,9 @@ public class ClientService {
         return clientRepository.findByEmail(email);
     }
 
-    @Transactional
-    public List<Client> getAllClient() {
-        return clientRepository.findAll();
+    @Transactional(readOnly = true)
+    public List<Client> getAllClient(Client client) {
+        return (List<Client>) clientRepository.getAllClient(client);
     }
 
     @Transactional
