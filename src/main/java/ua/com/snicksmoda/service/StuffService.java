@@ -16,7 +16,6 @@ public class StuffService {
     @Autowired
     StuffRepository stuffRepository;
 
-    @Secured("ROLE_ADMIN")
     @Transactional
     public boolean addStuff(String name, Category category, String description, Long price, String urlPhoto) {
         Stuff stuff = new Stuff(name, category, description, price, urlPhoto);
@@ -24,7 +23,6 @@ public class StuffService {
         return true;
     }
 
-    @Secured("ROLE_ADMIN")
     @Transactional
     public boolean saveStuff(Stuff stuff) {
         if (stuffRepository.existsById(stuff.getIdStuff())) {

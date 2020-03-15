@@ -124,18 +124,4 @@ public class Client {
     public void setBasket(Basket basket) {
         this.basket = basket;
     }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "idClient=" + idClient +
-                ", name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", role=" + role +
-                ", ordersList=" + ordersList +
-                '}';
-    }
 }

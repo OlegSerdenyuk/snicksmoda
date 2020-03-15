@@ -1,10 +1,13 @@
 package ua.com.snicksmoda.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.com.snicksmoda.entity.Category;
 
 @Service
 public class CategoryService {
+
+    @Transactional
     public Category getCategoryByName(String name) {
         Category category = null;
         if (name.equals("mens clothing")) {

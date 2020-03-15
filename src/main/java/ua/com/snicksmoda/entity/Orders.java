@@ -48,13 +48,4 @@ public class Orders {
     public void setStuffList(List<Stuff> stuffList) {
         this.stuffList = stuffList;
     }
-
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "idOrders=" + idOrders +
-                ", client=" + client +
-                ", stuffList=" + stuffList +
-                '}';
-    }
 }

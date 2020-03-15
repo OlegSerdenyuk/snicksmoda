@@ -14,7 +14,7 @@ import java.util.List;
 public class ClientService {
 
     @Autowired
-    ClientRepository clientRepository;
+    private ClientRepository clientRepository;
 
     @Autowired
     private BasketService basketService;
@@ -61,16 +61,7 @@ public class ClientService {
         return clientRepository.findByEmail(email);
     }
 
-    @Transactional(readOnly = true)
-    public List<Client> getAllClient(Client client) {
-        return (List<Client>) clientRepository.getAllClient(client);
-    }
-
     @Transactional
-    public Client getEmail(String email) {
-        return clientRepository.getEmail(email);
-    }
-
     public boolean changePassword(Client client, String password) {
         if (client == null) {
             return false;

@@ -5,14 +5,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import ua.com.snicksmoda.entity.Client;
 import ua.com.snicksmoda.entity.Role;
 import ua.com.snicksmoda.service.BasketService;
 import ua.com.snicksmoda.service.ClientService;
 import ua.com.snicksmoda.service.StuffService;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MainController {
@@ -31,7 +30,7 @@ public class MainController {
 
     @RequestMapping("/main_page")
     String mainPage() {
-        return "mainPage";
+        return "main_page";
     }
 
     @RequestMapping("/admin")
@@ -39,6 +38,55 @@ public class MainController {
         return "admin";
     }
 
+    @RequestMapping("/category")
+    String category() {
+        return "category";
+    }
+
+    @RequestMapping("/mens_clothing")
+    String mensClothing() {
+        return "mens_clothing";
+    }
+
+    @RequestMapping("/womens_clothing")
+    String womensClothing() {
+        return "womens_clothing";
+    }
+
+    @RequestMapping("/baby_clothing")
+    String babyClothing() {
+        return "baby_clothing";
+    }
+
+    @RequestMapping("/delivery_payment")
+    String deliveryPayment() {
+        return "delivery_payment";
+    }
+
+    @RequestMapping("/contact")
+    String contact() {
+        return "contact";
+    }
+
+    @RequestMapping("/info_snicksmoda")
+    String infoSnicksmoda() {
+        return "info_snicksmoda";
+    }
+
+    @RequestMapping("/info_mens_clothing")
+    String infoMensClothing() {
+        return "info_mens_clothing";
+    }
+
+    @RequestMapping("/info_womens_clothing")
+    String infoWomensClothing() {
+        return "info_womens_clothing";
+    }
+
+    @RequestMapping("/info_baby_clothing")
+    String infoBabyClothing() {
+        return "info_baby_clothing";
+    }
 
     @RequestMapping("/registration")
     ModelAndView registration(@RequestParam("password") String password) {

@@ -54,12 +54,4 @@ public class Basket {
     public void setStuff(Stuff stuff) {
         this.stuff.add(stuff);
     }
-
-    @Override
-    public String toString() {
-        return "Basket{" +
-                "idBasket=" + idBasket +
-                ", stuffList=" + stuffList +
-                '}';
-    }
 }

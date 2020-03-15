@@ -45,13 +45,4 @@ public class StuffReview {
     public void setStuff(Stuff stuff) {
         this.stuff = stuff;
     }
-
-    @Override
-    public String toString() {
-        return "StuffReview{" +
-                "idStuffReview=" + idStuffReview +
-                ", text='" + text + '\'' +
-                ", stuff=" + stuff +
-                '}';
-    }
 }

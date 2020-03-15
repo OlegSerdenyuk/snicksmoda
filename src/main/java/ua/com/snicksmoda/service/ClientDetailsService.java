@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ClientDetailsService implements UserDetailsService {
 
-    @Autowired(required=true)
+    @Autowired
     private ClientService clientService;
 
     @Override

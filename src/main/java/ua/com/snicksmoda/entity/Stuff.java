@@ -110,20 +110,6 @@ public class Stuff {
         this.stuffReviewList = stuffReviewList;
     }
 
-    @Override
-    public String toString() {
-        return "Stuff{" +
-                "idStuff=" + idStuff +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", urlPhoto='" + urlPhoto + '\'' +
-                ", orders=" + orders +
-                ", category=" + category +
-                ", basket=" + basket +
-                '}';
-    }
-
     public void add(Stuff stuff) {
 
     }

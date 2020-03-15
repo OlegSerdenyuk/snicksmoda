@@ -24,6 +24,7 @@ public class BasketService {
         return basketRepository.save(new Basket()).getIdBasket();
     }
 
+    @Transactional
     public boolean addStuffToBasket(Stuff stuff) {
         Basket basket = clientService.findByEmail(getEmailCurrentClient()).getBasket();
         basket.setStuff(stuff);

@@ -9,16 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.com.snicksmoda.service.BasketService;
 import ua.com.snicksmoda.service.ClientService;
 
-import javax.xml.ws.soap.Addressing;
-
 @RestController
 public class BasketController {
 
     @Autowired
-    ClientService clientService;
+    private ClientService clientService;
 
     @Autowired
-    BasketService basketService;
+    private BasketService basketService;
 
     @RequestMapping("/basket")
     ModelAndView getBasketInfo() {
